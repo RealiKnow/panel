@@ -1,21 +1,37 @@
-!/bin/bash
+#!/bin/bash
 
-# ASCII Art
-ascii_art="
-
+# Display the banner
+cat << "EOF"
  ███╗   ███╗ █████╗ ███████╗
  ████╗ ████║██╔══██╗╚══███╔╝
  ██╔████╔██║███████║  ███╔╝ 
  ██║╚██╔╝██║██╔══██║ ███╔╝  
  ██║ ╚═╝ ██║██║  ██║███████╗
  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝
-                                 
-"
+ 
+                                                   
+EOF
 
-# Install puffer panel
+echo "🚀 Updating system packages..."
 apt update
-apt install sudo
-apt install systemctl
+
+echo "🔧 Installing required packages..."
+apt install -y sudo
+apt install -y systemctl
+
+echo "🌐 Adding PufferPanel repository..."
 curl -s https://packagecloud.io/install/repositories/pufferpanel/pufferpanel/script.deb.sh?any=true | sudo bash
+
+echo "📦 Updating package list..."
 sudo apt update
-sudo apt-get install pufferpanel
+
+echo "🎮 Installing PufferPanel..."
+sudo apt-get install -y pufferpanel
+
+echo "👤 Creating a PufferPanel user..."
+sudo pufferpanel user add
+
+echo "✅ Enabling and starting PufferPanel service..."
+sudo systemctl enable --now pufferpanel
+
+echo "🔥 PufferPanel is installed and running!"
