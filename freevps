@@ -1,6 +1,6 @@
 echo "===================================="
 echo "More  Free VPS github.com/RealiKnow"
-echo "Keep support akuh.net thanks"
+echo "Keep support github.com/RealiKnow thanks"
 echo "Please Wait"
 echo "===================================="
 wget -O akuh.zip https://media.githubusercontent.com/media/akuhnet/wqemu/master/akuh.zip
